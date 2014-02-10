@@ -1,0 +1,23 @@
+{
+  "name": "heineken_uefa",
+  "version": "0.0.0",
+  "description": "[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)",
+  "main": "public/js/app/index.js",
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-cli": "~0.1.13"
+  },
+  "devDependencies": {
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-compass": "~0.7.1",
+    "grunt-rsync": "~0.2.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-hogan": "~0.2.2-2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
