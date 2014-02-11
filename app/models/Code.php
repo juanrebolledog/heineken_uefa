@@ -3,6 +3,8 @@
 class Code extends Eloquent {
     protected $guarded = array();
 
+    public $timestamps = false;
+
     public $table = 'codigos';
 
     public static $rules = array();
@@ -10,7 +12,7 @@ class Code extends Eloquent {
     static public function valid($value)
     {
         $code = Code::where('valor', $value)->first();
-        if (isset($code->exists) && $code->exists)
+        if (isset($code->exists) && $code->exists && $code->activo)
         {
             return true;
         }
@@ -21,12 +23,17 @@ class Code extends Eloquent {
     {
         if (self::valid($value))
         {
-            $teams = array();
-            foreach (range(1, 3) as $j)
+            $code = Code::where('valor', $value)->first();
+            $code->activo = false;
+            if ($code->save())
             {
-                array_push($teams, self::pick());
+                $teams = array();
+                foreach (range(1, 3) as $j)
+                {
+                    array_push($teams, self::pick());
+                }
+                return $teams;
             }
-            return $teams;
         }
         return false;
     }
@@ -35,6 +42,7 @@ class Code extends Eloquent {
     {
         $weights = Config::get('app.weights');
         $intervals = array(14, 64, 139);
+
         $num = mt_rand(0, array_sum($weights)-1);
         $selected_group = 0;
         foreach ($intervals as $group=>$i)

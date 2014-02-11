@@ -14,6 +14,17 @@ class CodeTest extends TestCase {
         $this->assertFalse(Code::valid($invalid_code));
     }
 
+    public function testExchangeTwice()
+    {
+        $one_code = Code::first();
+        $exchange = Code::exchange($one_code->valor);
+        $this->assertTrue(!empty($exchange));
+        $this->assertEquals(3, count($exchange));
+
+        $exchange = Code::exchange($one_code->valor);
+        $this->assertTrue(empty($exchange));
+    }
+
     public function testExchange()
     {
         $one_code = Code::first();
@@ -28,10 +39,10 @@ class CodeTest extends TestCase {
         $group_counter = array(1 => 0, 2 => 0, 3 => 0);
         $group_probability = array(1 => 0, 2 => 0, 3 => 0);
         $total = 0;
-        foreach (range(1, 1000) as $i)
+        $codes = Code::all();
+        foreach ($codes as $code)
         {
-            $one_code = Code::first();
-            $exchange = Code::exchange($one_code->valor);
+            $exchange = Code::exchange($code->valor);
             array_push($results, $exchange);
         }
 
