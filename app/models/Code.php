@@ -54,8 +54,11 @@ class Code extends Eloquent {
             }
         }
 
-        $group_teams = Team::where('grupo', $selected_group)->get();
-        return $group_teams[mt_rand(0, count($group_teams)-1)];
+        $group_teams = Team::getAvailableTeams($selected_group);
+        if (!$group_teams->isEmpty())
+        {
+            return $group_teams[mt_rand(0, $group_teams->count()-1)];
+        }
     }
 
 

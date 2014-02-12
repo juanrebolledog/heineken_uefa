@@ -44,11 +44,7 @@ class CodeTest extends TestCase {
         {
             $exchange = Code::exchange($code->valor);
             array_push($results, $exchange);
-        }
-
-        foreach ($results as $set)
-        {
-            foreach ($set as $team)
+            foreach ($exchange as $team)
             {
                 $total += 1;
                 $group_counter[$team->grupo] += 1;

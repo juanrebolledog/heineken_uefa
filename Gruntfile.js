@@ -11,8 +11,15 @@ module.exports = function (grunt) {
                 }
             },
             templates: {
-                files: 'public/hogan/*.hogan',
+                files: 'public/templates/**/*.hogan',
                 tasks: ['hogan'],
+                options: {
+                    livereload: true
+                }
+            },
+            app: {
+                files: 'public/js/**/*.js',
+                tasks: [],
                 options: {
                     livereload: true
                 }
@@ -65,6 +72,10 @@ module.exports = function (grunt) {
                         dest: 'public/js/lib/'
                     },
                     {
+                        src: 'bower_components/backbone.wreqr/lib/amd/backbone.wreqr.js',
+                        dest: 'public/js/lib/wreqr.js'
+                    },
+                    {
                         src: 'bower_components/marionette/lib/backbone.marionette.js',
                         dest: 'public/js/lib/marionette.js'
                     },
@@ -98,9 +109,14 @@ module.exports = function (grunt) {
             }
         },
         hogan: {
-            dev: {
-                templates: 'public/hogan/**.hogan',
-                output: 'public/js/templates.js',
+            mobile: {
+                templates: 'public/templates/mobile/*.hogan',
+                output: 'public/js/templates_mobile.js',
+                binderName: 'amd'
+            },
+            desktop: {
+                templates: 'public/templates/desktop/*.hogan',
+                output: 'public/js/templates_desktop.js',
                 binderName: 'amd'
             }
         }

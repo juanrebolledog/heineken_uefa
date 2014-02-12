@@ -1,12 +1,14 @@
 requirejs.config({
     baseUrl: '',
     paths: {
-        app: 'js/app',
+        app: 'js/app/mobile',
         jquery: 'js/lib/jquery',
         underscore: 'js/lib/underscore',
         backbone: 'js/lib/backbone',
         marionette: 'js/lib/marionette',
-        hogan: 'js/lib/hogan'
+        hogan: 'js/lib/hogan',
+        facebook: '//connect.facebook.net/es_CL/all',
+        wreqr: 'js/lib/wreqr'
     },
     shim : {
         jquery : {
@@ -25,12 +27,29 @@ requirejs.config({
         },
         hogan: {
             exports: 'Hogan'
+        },
+        facebook : {
+            exports: 'FB'
         }
     }
 });
 
-require(['jquery', 'hogan', 'js/templates'], function($, Hogan, templates) {
+require(['jquery', 'app/app', 'app/eventgg'], function($, App, EventGG) {
+
     var container = $('#app-container');
-    container.append(templates.test({ name: 'Juan' }));
-    container.append(templates.new({ name: 'José FAA' }));
+
+    App.start();
+
+    EventGG.on('code:valid', function() {
+        App.moveTo();
+    });
+
+    $(document).on('touchend', function(e) {
+        App.moveTo();
+    });
+
+    $(document).on('click', function(e) {
+        App.moveTo();
+    });
+
 });

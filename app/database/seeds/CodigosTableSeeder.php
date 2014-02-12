@@ -4,7 +4,7 @@ class CodigosTableSeeder extends Seeder {
 
     public function run()
     {
-        DB::table('codigos')->truncate();
+        DB::table('codigos')->delete();
 
         foreach(range(1, 100) as $i)
         {

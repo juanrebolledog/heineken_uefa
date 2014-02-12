@@ -1,0 +1,19 @@
+<img src="../img/mobile/logo.png" alt=""/>
+
+<div class="hero-desc">
+    <h2>CONECTA TU CUENTA DE FACEBOOK</h2>
+    <p>SI YA HAZ JUGADO SE RECUPERARÁN TODAS TUS FINALES</p>
+    <hr/>
+
+    <div class="fb-like">
+        <a href="#" class="button radius">Conectar</a>
+    </div>
+
+    <ul class="navigation">
+        <li class="page"></li>
+        <li class="page"></li>
+        <li class="page"></li>
+        <li class="page"></li>
+        <li class="page"></li>
+    </ul>
+</div>

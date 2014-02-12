@@ -4,7 +4,7 @@ class EquiposTableSeeder extends Seeder {
 
     public function run()
     {
-        DB::table('equipos')->truncate();
+        DB::table('equipos')->delete();
 
         $equipos = array(
             array(

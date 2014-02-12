@@ -1,0 +1,37 @@
+<img src="../img/desktop/logo.png" alt=""/>
+<div class="hero-desc">
+    <h2>ARMA TU FINAL Y VIAJA A LISBOA</h2>
+    <hr/>
+    <p>
+        INGRESA EL CÓDIGO QUE VIENE EN LOS PACKS DE HEINEKEN Y PRONOSTICA LOS EQUIPOS <br/>
+        QUE JUGARÁN LA FINAL 2014 DE LA UEFA CHAMPIONS LEAGUE <br/>
+        PODRÁS GANAR 2 TICKETS A LA FINAL DE LA CHAMPIONS Y MUCHOS PREMIOS MÁS.
+    </p>
+
+    <div class="content">
+        <div class="code-form">
+            <form action="#">
+                <div class="age-requirement">
+                    <input type="checkbox" id="age-confirm"/>
+                    <label for="age-confirm">SOY MAYOR DE 18 AÑOS</label>
+                </div>
+                <div class="code-input">
+                    <div class="row collapse">
+                        <div class="small-9 columns">
+                            <input type="text" placeholder="INGRESA TU CÓDIGO AQUÍ"/>
+                        </div>
+                        <div class="small-3 columns">
+                            <span class="postfix round">></span>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="video-embed">
+            <iframe src="//www.youtube.com/embed/NIZdRiqpINk" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+</div>

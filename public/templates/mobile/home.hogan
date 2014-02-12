@@ -1,0 +1,15 @@
+<img src="../img/mobile/logo.png" alt=""/>
+
+<div class="hero-desc">
+    <h2>ARMA TU FINAL Y VIAJA A LISBOA</h2>
+    <p>PODRÁS GANAR 2 TICKETS A LA FINAL DE LA CHAMPIONS Y MUCHOS PREMIOS MÁS.</p>
+    <hr/>
+    
+    <ul class="navigation">
+        <li class="page"></li>
+        <li class="page"></li>
+        <li class="page"></li>
+        <li class="page"></li>
+        <li class="page"></li>
+    </ul>
+</div>
